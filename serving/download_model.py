@@ -17,5 +17,5 @@ wandb.init()
 
 current_folder = Path(__file__).parent
 print(f"Folder: {current_folder}")
-path = wandb.use_artiface(wandb_model_path).download()
+path = wandb.use_artifact(wandb_model_path).download()
 print(f"Model downloaded to: {path}")
