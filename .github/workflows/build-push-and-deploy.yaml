@@ -29,12 +29,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: "us-east-1"
-      - name: Install W&B
-        run: pip install wandb
-      - name: Download model
-        env: 
-          WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
-        run: python ./serving/download_model.py
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
