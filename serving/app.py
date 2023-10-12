@@ -83,7 +83,7 @@ async def predict_api(file: UploadFile = File(...)) -> ClassPredictions:
 
     image = read_imagefile(await file.read())
     x = preprocess_image(image)
-    predictions = predict(x, labels)
+    predictions = predict(x)
 
     log = {
         "message": f"Predictions for {file.filename}: {predictions}",
