@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 import sys
 from functools import partial
@@ -78,8 +80,10 @@ async def predict_api(file: UploadFile = File(...)) -> ClassPredictions:
         raise TypeError(
             f"File extension for {file.filename} should be one of {valid_extensions}"
         )
-    ### EXERCISE: read the image from the input `file` object,
-    ### then preprocess the input and compute model predictions ###
+
+    image = read_imagefile(await file.read())
+    x = preprocess_image(image)
+    predictions = predict(x, labels)
 
     log = {
         "message": f"Predictions for {file.filename}: {predictions}",
