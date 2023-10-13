@@ -9,16 +9,16 @@
 # el."
 #     )
 
-# wandb_team = "mlops-usf"
-# wandb_project = "foodformer-serving"
-# wandb_model = "jxkiqv3f"
+# wandb_team = "jinwei-k-sun"
+# wandb_project = "foodformer"
+# wandb_model = "VisionTransformer-base"
 # wandb_model_path = f"{wandb_team}/{wandb_project}/{wandb_model}"
 
 # wandb.init()
 
 # current_folder = Path(__file__).parent
 # print(f"Folder: {current_folder}")
-# path = wandb.use_artifact(wandb_model_path).download()
+# path = wandb.use_artifact(wandb_model_path).download(root=current_folder)
 # print(f"Model downloaded to: {path}")
 import os
 
@@ -33,8 +33,8 @@ if not os.environ.get("WANDB_API_KEY"):
     )
 
 entity = "jinwei-k-sun"
-project = "foodformer-serving"
-run_name = "crisp-glade-8"
+project = "foodformer"
+run_name = "VisionTransformer-base"
 
 # Initialize the wandb API
 api = wandb.Api()
