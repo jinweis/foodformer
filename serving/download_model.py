@@ -34,7 +34,7 @@ if not os.environ.get("WANDB_API_KEY"):
 
 entity = "jinwei-k-sun"
 project = "foodformer-serving"
-run_name = "job-https___github.com_jinweis_foodformer_serving_download_model.py:v4"
+run_name = "crisp-glade-8"
 
 # Initialize the wandb API
 api = wandb.Api()
